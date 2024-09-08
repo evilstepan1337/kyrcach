@@ -156,56 +156,52 @@ body {
 
 .cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Позволяет карточкам переноситься на следующую строку */
+    gap: 20px; /* Отступы между карточками */
+    justify-content: center; /* Центрирование карточек по горизонтали */
+    padding: 20px; /* Отступ внутри контейнера */
 }
 
+/* Стиль для каждой карточки */
 .card {
-    width: 300px;
-    position: relative;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
+    flex: 1 1 calc(50% - 20px); /* Ширина карточки: 50% от контейнера минус отступы */
+    max-width: 300px; /* Максимальная ширина карточки */
+    box-sizing: border-box; /* Учитывать отступы и границы в расчете ширины */
+    background-color: #fff; /* Фоновый цвет карточки */
+    border: 1px solid #ddd; /* Граница карточки */
+    border-radius: 8px; /* Закругление углов карточки */
+    overflow: hidden; /* Обрезать содержимое, выходящее за границы карточки */
 }
 
+/* Стиль для изображений внутри карточек */
 .card-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+    width: 100%; /* Изображение заполняет всю ширину карточки */
+    height: auto; /* Высота изображения автоматически пропорциональна ширине */
+    object-fit: cover; /* Изображение обрезается, чтобы заполнить карточку без искажения */
+}
+
+/* Остальные стили для карточки */
+.event-date {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f0f0f0;
 }
 
 .card-content {
     padding: 15px;
-    position: relative;
-}
-
-.event-date {
-    position: absolute;
-    color: white;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 5px;
 }
 
 .event-description {
-    margin: 10px 0;
-    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .participate-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #007BFF;
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 10px 15px;
     cursor: pointer;
-    text-align: center;
-    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .participate-btn:hover {
